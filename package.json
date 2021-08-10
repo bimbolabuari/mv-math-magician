@@ -12,6 +12,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "hint": "npx hint --telemetry=off .",
+    "stylelint": "npx stylelint '**/*.{css,scss}'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
