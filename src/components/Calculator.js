@@ -1,4 +1,7 @@
-function Calculator() {
+import React from "react";
+
+class Calculator extends React.Component {
+  render() {
     return (
       <div className="calculator">
       <input type="text" className="calculator-screen" value="0" disabled />     
@@ -32,6 +35,8 @@ function Calculator() {
     </div>
     );
   }
+}
+
   
   export default Calculator;
   
