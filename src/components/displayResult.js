@@ -23,8 +23,7 @@ class DisplayResult extends React.Component {
               display = `${total}`;
           }
           return (
-           <div className="calculator-screen">{display}</div>
-           
+           <div className="calculator-screen">{display}</div>      
           );
       }
     }
