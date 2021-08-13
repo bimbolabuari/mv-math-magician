@@ -1,36 +1,52 @@
 import React from "react";
+import calculate from "../logic/Calculate";
+import DisplayResult from "./DisplayResult";
+import CalculatorButton from "./CalculatorButton";
+import generateDisplayValue from '../helper/generateDisplayValue';
 
 class Calculator extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
+  }
+
+  clickEventListener = (event) => {
+    const object = this.state;
+    const value = event.target.value;
+    const result = calculate(object, value);
+    this.setState(result);
+  }
+
   render() {
+    const displayValue = generateDisplayValue(this.state);
     return (
       <div className="calculator">
-      <input type="text" className="calculator-screen" value="0" disabled />     
+      <DisplayResult displayvalue={displayValue}/>
       <div className="calculator-keys"> 
-
-      <button type="button" className="all-clear" value="all-clear">AC</button>
-      <button type="button" className="plus-minus-sign" value="+/-">+/-</button>   
-      <button type="button" className="percentage" value="%">%</button> 
-      <button type="button" className="operator" value="/">&divide;</button>
-
-      <button type="button" value="7">7</button>
-      <button type="button" value="8">8</button>
-      <button type="button" value="9">9</button>
-      <button type="button" className="operator" value="*">&times;</button>
-
-      <button type="button" value="4">4</button>
-      <button type="button" value="5">5</button>
-      <button type="button" value="6">6</button>
-      <button type="button" className="operator" value="-">-</button> 
-
-      <button type="button" value="1">1</button>
-      <button type="button" value="2">2</button>
-      <button type="button" value="3">3</button>
-      <button type="button" className="operator" value="+">+</button>
-
-      <button type="button" value="0" className="zero">0</button>
-      <button type="button" className="decimal" value=".">.</button>
-      <button type="button" className="operator" value="=">=</button>
-
+        <CalculatorButton  value="AC"  clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="+/-" clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="%"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="÷"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="7"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="8"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="9"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="x"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="4"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="5"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="6"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="-"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="1"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="2"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="3"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="+"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="0"   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="."   clickEventListener={this.clickEventListener}/>
+        <CalculatorButton  value="="   clickEventListener={this.clickEventListener}/>
       </div>
     </div>
     );
