@@ -4,7 +4,15 @@ function isNumber(item) {
   return !!item.match(/[0-9]+/);
 }
 
-
+/**
+ * Given a button name and a calculator data object, return an updated
+ * calculator data object.
+ *
+ * Calculator data object contains:
+ *   total:s      the running total
+ *   next:String       the next number to be operated on with the total
+ *   operation:String  +, -, etc.
+ */
 export default function calculate(obj, buttonName) {
   if (buttonName === 'AC') {
     return {
@@ -43,7 +51,7 @@ export default function calculate(obj, buttonName) {
       if (obj.next.includes('.')) {
         return {};
       }
-      return { next: `${obj.next}.` };
+      return { next: obj.next + '.' };
     }
     if (obj.operation) {
       return { next: '0.' };
@@ -52,7 +60,7 @@ export default function calculate(obj, buttonName) {
       if (obj.total.includes('.')) {
         return {};
       }
-      return { total: `${obj.next}.` };
+      return { total: obj.total + '.' };
     }
     return { total: '0.' };
   }
@@ -64,9 +72,10 @@ export default function calculate(obj, buttonName) {
         next: null,
         operation: null,
       };
+    } else {
+      // '=' with no operation, nothing to do
+      return {};
     }
-    // '=' with no operation, nothing to do
-    return {};
   }
 
   if (buttonName === '+/-') {
@@ -87,11 +96,6 @@ export default function calculate(obj, buttonName) {
     return {};
   }
 
-  // The user hasn't typed a number yet, just save the operation
-  if (!obj.next) {
-    return { operation: buttonName };
-  }
-
   // User pressed an operation button and there is an existing operation
   if (obj.operation) {
     return {
@@ -102,6 +106,11 @@ export default function calculate(obj, buttonName) {
   }
 
   // no operation yet, but the user typed one
+
+  // The user hasn't typed a number yet, just save the operation
+  if (!obj.next) {
+    return { operation: buttonName };
+  }
 
   // save the operation and shift 'next' into 'total'
   return {
