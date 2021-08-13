@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class DisplayResult extends React.Component {
     constructor(props) {
@@ -24,20 +23,10 @@ class DisplayResult extends React.Component {
               display = `${total}`;
           }
           return (
-           <div className="calculator-screen">{display}</div>
-           
+           <div className="calculator-screen">{display}</div>      
           );
       }
     }
-    
-    DisplayResult.propTypes = {
-      total: PropTypes.string,
-      next: PropTypes.string,
-    };
-    
-    DisplayResult.defaultProps = {
-      total: '',
-      next: '',
-    };
+
 
     export default DisplayResult;
