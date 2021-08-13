@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class DisplayResult extends React.Component {
     constructor(props) {
@@ -23,8 +22,7 @@ class DisplayResult extends React.Component {
               display = `${total}`;
           }
           return (
-           <div className="calculator-screen">{display}</div>
-           
+           <div className="calculator-screen">{display}</div>      
           );
       }
     }
