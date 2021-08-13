@@ -1,7 +1,8 @@
 import React from "react";
 import calculate from "../logic/Calculate";
-import DisplayResult from "./displayResult";
+import DisplayResult from "./DisplayResult";
 import CalculatorButton from "./CalculatorButton";
+import generateDisplayValue from '../helper/generateDisplayValue';
 
 class Calculator extends React.Component {
 
@@ -22,10 +23,10 @@ class Calculator extends React.Component {
   }
 
   render() {
-    const { total, next, operation } = this.state;
+    const displayValue = generateDisplayValue(this.state);
     return (
       <div className="calculator">
-      <DisplayResult total={total} next={next} operation={operation}/>
+      <DisplayResult displayValue={displayValue}/>
       <div className="calculator-keys"> 
         <CalculatorButton  value="AC"  clickEventListener={this.clickEventListener}/>
         <CalculatorButton  value="+/-" clickEventListener={this.clickEventListener}/>
