@@ -26,7 +26,7 @@ class Calculator extends React.Component {
     const displayValue = generateDisplayValue(this.state);
     return (
       <div className="calculator">
-      <DisplayResult displayValue={displayValue}/>
+      <DisplayResult displayvalue={displayValue}/>
       <div className="calculator-keys"> 
         <CalculatorButton  value="AC"  clickEventListener={this.clickEventListener}/>
         <CalculatorButton  value="+/-" clickEventListener={this.clickEventListener}/>
