@@ -1,19 +1,16 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-
-class CalculatorButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { value, clickEventListener } = this.props;
+import PropTypes from "prop-types";
+const CalculatorButton = ({ value, clickEventListener }) => {
     const className =`${value === '0' ? 'zero' : ''} ${value === "÷" || value === 'x' || value === '-' || value === '+' || value === '=' ? 'operator' : ''}`;
     return (
-      <button type="button" className={className}  value={value} onClick={clickEventListener}>{value}</button>
-    );
+    <button type="button" className={className} value={value} onClick={clickEventListener}>{value}</button>
+    )
   }
-}
+
+  CalculatorButton.propTypes = {
+  value: PropTypes.string,
+  clickEventListener: PropTypes.func
+};
+
 
 export default CalculatorButton

@@ -1,6 +1,6 @@
 # Math Magician Project
 
-> This project is a Microverse exercise on setting up the environment and tools needed to develop a React application using [Create React App (CRA)](https://github.com/facebook/create-react-app), React class based components, JSX, CSS Grid.
+> This project is a Microverse exercise on building Calculator app using react functional and class component, State, Props, ES6 modules, import and export, Hooks, setting up the environment and tools needed to develop a React application using [Create React App (CRA)](https://github.com/facebook/create-react-app),
 
 
 ## Author
