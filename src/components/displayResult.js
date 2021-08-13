@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,12 +9,12 @@ class DisplayResult extends React.Component {
     
       render() {
         const { total, next, operation } = this.props;
-        let display = 0;
+        let display = '0';
 
         if (!total && !next && !operation) {
-            display = 0;
+            display = '0';
           }else if (!total && next) {
-            display = next;
+            display = `${next}`;
           } else if (operation && total && !next) {
             display = `${total} ${operation}`;
           } else if (total && next && operation) {
@@ -33,11 +32,13 @@ class DisplayResult extends React.Component {
     DisplayResult.propTypes = {
       total: PropTypes.string,
       next: PropTypes.string,
+      operation: PropTypes.string,
     };
     
     DisplayResult.defaultProps = {
       total: '',
       next: '',
+      operation: '',
     };
 
     export default DisplayResult;
