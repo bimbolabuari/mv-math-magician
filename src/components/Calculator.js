@@ -1,58 +1,56 @@
 import React from "react";
-import calculate from "../logic/Calculate";
+import  { useState, setState } from 'react';
+import  calculate from "../logic/Calculate";
 import DisplayResult from "./DisplayResult";
 import CalculatorButton from "./CalculatorButton";
 import generateDisplayValue from '../helper/generateDisplayValue';
 
-class Calculator extends React.Component {
+const Calculator = () => {
+  const [calculateState, calculateStateHandler] = useState({ total: null, next: null, operation: null });
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-  }
-
-  clickEventListener = (event) => {
-    const object = this.state;
+  const clickEventListener = (event) => {
     const value = event.target.value;
-    const result = calculate(object, value);
-    this.setState(result);
+    let { total, next, operation } = calculate(calculateState, value);
+  if (total === undefined) {
+    total = calculateState.total;
   }
-
-  render() {
-    const displayValue = generateDisplayValue(this.state);
-    return (
-      <div className="calculator">
-      <DisplayResult displayvalue={displayValue}/>
-      <div className="calculator-keys"> 
-        <CalculatorButton  value="AC"  clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="+/-" clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="%"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="÷"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="7"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="8"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="9"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="x"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="4"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="5"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="6"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="-"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="1"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="2"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="3"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="+"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="0"   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="."   clickEventListener={this.clickEventListener}/>
-        <CalculatorButton  value="="   clickEventListener={this.clickEventListener}/>
-      </div>
-    </div>
-    );
+  if (next === undefined) {
+    next = calculateState.next;
   }
-}
+  if (operation === undefined) {
+    operation = calculateState.operation;
+  }
+  calculateStateHandler({ total, next, operation });
+};
 
+const displayValue = generateDisplayValue(calculateState);
+return (
+  <div className="calculator">
+  <DisplayResult displayvalue={displayValue}/>
+  <div className="calculator-keys"> 
+    <CalculatorButton  value="AC"  clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="+/-" clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="%"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="÷"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="7"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="8"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="9"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="x"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="4"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="5"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="6"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="-"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="1"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="2"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="3"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="+"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="0"   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="."   clickEventListener={clickEventListener}/>
+    <CalculatorButton  value="="   clickEventListener={clickEventListener}/>
+  </div>
+</div>
+)
+  }
   
   export default Calculator;
   
