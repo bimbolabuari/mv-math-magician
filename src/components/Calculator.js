@@ -25,6 +25,8 @@ const Calculator = () => {
 
 const displayValue = generateDisplayValue(calculateState);
 return (
+  <div>
+    <h2 className="calculatorTitle">Let`s do some Maths!</h2>
   <div className="calculator">
   <DisplayResult displayvalue={displayValue}/>
   <div className="calculator-keys"> 
@@ -48,6 +50,7 @@ return (
     <CalculatorButton  value="."   clickEventListener={clickEventListener}/>
     <CalculatorButton  value="="   clickEventListener={clickEventListener}/>
   </div>
+</div>
 </div>
 )
   }
