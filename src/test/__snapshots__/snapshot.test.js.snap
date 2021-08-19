@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests snapshots of components renders correctly 1`] = `
+<div>
+  <h2
+    className="calculatorTitle"
+  >
+    Let\`s do some Maths!
+  </h2>
+  <div
+    className="calculator"
+  >
+    <div
+      className="calculator-screen"
+    >
+      0
+    </div>
+    <div
+      className="calculator-keys"
+    >
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="AC"
+      >
+        AC
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="+/-"
+      >
+        +/-
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="%"
+      >
+        %
+      </button>
+      <button
+        className=" operator"
+        onClick={[Function]}
+        type="button"
+        value="÷"
+      >
+        ÷
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="7"
+      >
+        7
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="8"
+      >
+        8
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="9"
+      >
+        9
+      </button>
+      <button
+        className=" operator"
+        onClick={[Function]}
+        type="button"
+        value="x"
+      >
+        x
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="4"
+      >
+        4
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="5"
+      >
+        5
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="6"
+      >
+        6
+      </button>
+      <button
+        className=" operator"
+        onClick={[Function]}
+        type="button"
+        value="-"
+      >
+        -
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="1"
+      >
+        1
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="2"
+      >
+        2
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="3"
+      >
+        3
+      </button>
+      <button
+        className=" operator"
+        onClick={[Function]}
+        type="button"
+        value="+"
+      >
+        +
+      </button>
+      <button
+        className="zero "
+        onClick={[Function]}
+        type="button"
+        value="0"
+      >
+        0
+      </button>
+      <button
+        className=" "
+        onClick={[Function]}
+        type="button"
+        value="."
+      >
+        .
+      </button>
+      <button
+        className=" operator"
+        onClick={[Function]}
+        type="button"
+        value="="
+      >
+        =
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests snapshots of components renders correctly 2`] = `
+<div>
+  <h2
+    className="homeTitle"
+  >
+    Welcome to our page
+  </h2>
+  <p
+    className="homeParagraph"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi erat. Suspendisse convallis erat non orci auctor, ut venenatis elit tincidunt.
+    <br />
+    Ut non augue non metus interdum ultricies vel quis felis. Vivamus vitae sapien ut elit blandit faucibus. Nulla a nunc eu lacus mollis congue. 
+    <br />
+    Nulla facilisi. Nam porttitor tellus vestibulum sem sodales hendrerit. Quisque pulvinar urna vitae nisi dignissim, in lacinia urna laoreet.
+  </p>
+</div>
+`;
+
+exports[`Tests snapshots of components renders correctly 3`] = `
+<p
+  className="quote"
+>
+  Mathematics is not about numbers, equations, computations, or algorithms: It\`s about understanding. - Williams Paul
+</p>
+`;
