@@ -3,6 +3,10 @@
 > This project is a Microverse exercise on building Calculator app using react functional and class component, State, Props, ES6 modules, import and export, Hooks, Router, setting up the environment and tools needed to develop a React application using [Create React App (CRA)](https://github.com/facebook/create-react-app),
 
 
+## Live Preview
+
+[Netlify Live Demo](https://deploy-preview-7--bimbola-mv-math-magician.netlify.app/)
+
 ## Author
 
 👤 **Abimbola Aminat Buari**
